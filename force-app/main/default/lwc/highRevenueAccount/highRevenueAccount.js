@@ -28,24 +28,33 @@ propertyName;
 
 export default class HighRevenueAccount extends LightningElement {
     accountsToDisplay = [];
-    
-    @wire(getHighRevenueAccountRecords)
-    getAccountsHandler(response){
-        // {error: ..., data: ...}
-        // Case1 : {error: undefined, data: ...}
-        // Case2 : {error: undefined, data: undefined}
-        const{data, error} = response; //destructing
-        // ==>  data = response.data;
-        // ==> error = response.error;
+    countOfRecords = 5;
 
-        if(error){
-            console.error(error);
-            return;
-        }
-
-        if(data){
-            this.accountsToDisplay = data;
-        }
-
+    connectedCallback(){
+        //imperative method
+        getHighRevenueAccountRecords({count: this.countOfRecords})
+        .then(result => {
+            console.log('Result using imperative approach1', result);
+            this.accountsToDisplay = result;
+        })
+        .catch(error => {
+            console.log(error);
+        })
     }
+
+
+    setCount(event){
+        console.log('Value', event.target.value);
+        let inputValue = event.target.value;
+        if(inputValue == '') return;
+        this.countOfRecords = inputValue;
+        getHighRevenueAccountRecords({count: this.countOfRecords}).then(result => {
+            console.log('Result using declarative approach', result);
+            this.accountsToDisplay = result;
+        })
+        .catch(error => {
+            console.log('Error' , error);
+        })
+    }
+
 }
