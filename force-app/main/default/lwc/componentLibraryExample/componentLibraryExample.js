@@ -1,3 +1,3 @@
-import { LightningElement } from 'lwc';
+import { LightningElement } from "lwc";
 
 export default class ComponentLibraryExample extends LightningElement {}

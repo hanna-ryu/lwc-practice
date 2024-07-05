@@ -1,15 +1,13 @@
-import { LightningElement } from 'lwc';
+import { LightningElement } from "lwc";
 
 export default class RenderConditionalTemplate extends LightningElement {
+  isVisible = true;
 
-    isVisible = true;
-
-    handleClick(){
-        if(this.isVisible == true){
-
-            this.isVisible = false;
-        }else{
-            this.isVisible = true;
-        }
+  handleClick() {
+    if (this.isVisible === true) {
+      this.isVisible = false;
+    } else {
+      this.isVisible = true;
     }
+  }
 }

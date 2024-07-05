@@ -1,0 +1,45 @@
+.slds-button {
+  width: 80%;
+  height: 45px;
+}
+.pastel-button {
+  background-color: #f0e4d7;
+  border: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.number-button {
+  background-color: #cfe2f3;
+  border: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.operator-button {
+  background-color: #f9cb9c;
+  border: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.other-button {
+  background-color: #d9ead3;
+  border: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.pastel-button:hover,
+.number-button:hover,
+.operator-button:hover,
+.other-button:hover {
+  opacity: 0.8;
+}
+
+.pastel-button:active,
+.number-button:active,
+.operator-button:active,
+.other-button:active {
+  opacity: 0.6;
+}

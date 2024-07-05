@@ -1,0 +1,170 @@
+<template>
+  <div class="slds-size_medium">
+    <lightning-card title="계산기" icon-name="utility:connected_apps">
+      <div class="slds-grid slds-wrap">
+        <div
+          class="slds-p-horizontal_small slds-m-vertical_x-small slds-text-heading_medium slds-col slds-size_12-of-12 display slds-text-align_right"
+          style="height: 40px"
+        >
+          {recentNum}
+        </div>
+
+        <hr
+          class="solid slds-size_12-of-12 slds-m-vertical_xx-small"
+          style="border-top: 1px solid #bbb"
+        />
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            1
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            2
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            3
+          </button>
+        </div>
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_brand operator-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleOperatorClick}
+          >
+            +
+          </button>
+        </div>
+
+        <hr
+          class="solid slds-size_12-of-12 slds-m-vertical_xx-small"
+          style="border-top: 1px solid #bbb"
+        />
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            4
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            5
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            6
+          </button>
+        </div>
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_brand operator-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleOperatorClick}
+          >
+            -
+          </button>
+        </div>
+
+        <hr
+          class="solid slds-size_12-of-12 slds-m-vertical_xx-small"
+          style="border-top: 1px solid #bbb"
+        />
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            7
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            8
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            9
+          </button>
+        </div>
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_brand operator-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleOperatorClick}
+          >
+            *
+          </button>
+        </div>
+
+        <hr
+          class="solid slds-size_12-of-12 slds-m-vertical_xx-small"
+          style="border-top: 1px solid #bbb"
+        />
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_destructive other-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleClearClick}
+          >
+            CLR
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_neutral number-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleNumberClick}
+          >
+            0
+          </button>
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_success other-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleEqualsClick}
+          >
+            =
+          </button>
+        </div>
+
+        <div class="slds-col slds-size_3-of-12">
+          <button
+            class="slds-button slds-button_brand operator-button slds-m-left_x-small slds-text-heading_medium"
+            onclick={handleOperatorClick}
+          >
+            /
+          </button>
+        </div>
+      </div>
+    </lightning-card>
+  </div>
+</template>
