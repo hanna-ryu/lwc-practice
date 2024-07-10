@@ -1,0 +1,66 @@
+<template>
+  <lightning-card title="환율 계산기" icon-name="utility:connected_apps">
+    <div class="slds-p-around_medium">
+      <div class="slds-grid slds-wrap">
+        <!-- 왼쪽  -->
+        <div class="slds-col slds-size_2-of-7 slds-m-right_medium">
+          <div class="slds-form-element slds-m-bottom_medium">
+            <label class="slds-form-element__label" for="amount-input"
+              >현재 기회의 금액</label
+            >
+            <div class="slds-form-element__control">
+              <input
+                type="text"
+                id="amount-input"
+                class="slds-input"
+                value={currencyDisplay}
+                disabled
+              />
+            </div>
+          </div>
+
+          <div class="slds-form-element slds-m-bottom_medium">
+            <lightning-combobox
+              name="currency"
+              label="변환할 통화"
+              value={selectedRate}
+              placeholder="원하는 통화를 선택하세요"
+              options={options}
+              onchange={handleChange}
+            >
+            </lightning-combobox>
+          </div>
+        </div>
+
+        <svg
+          class="slds-col slds-size_1-of-7 slds-grid_vertical-align-center slds-m-right_medium"
+          style="width: 30px; height: 30px"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g data-name="20.Arrow Right">
+            <path
+              d="M12 24a12 12 0 1 1 12-12 12.013 12.013 0 0 1-12 12zm0-22a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2z"
+            />
+            <path
+              d="m13.707 16.707-1.414-1.414L15.586 12l-3.293-3.293 1.414-1.414L18.414 12l-4.707 4.707z"
+            />
+            <path d="M6 11h11v2H6z" />
+          </g>
+        </svg>
+
+        <!-- 오른쪽-->
+        <div
+          class="slds-col slds-size_4-of-7 slds-p-around_medium slds-box slds-theme_default slds-grid_vertical-align-center"
+        >
+          <div class="slds-text-heading_small slds-m-bottom_small">
+            환율 정보
+          </div>
+          <p><strong>선택한 통화(환율):</strong> {selectedRate}</p>
+          <p><strong>변환된 금액:</strong> {convertedAmount}</p>
+          <p><strong>기준 시간:</strong> {lastUpdatedTime}</p>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>
